@@ -1,8 +1,7 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import ExpensesFilter from "./components/Expenses/ExpenseFilter";
 export default function App() {
-
-
   // expenses data
   const expenses = [
     {
@@ -26,15 +25,16 @@ export default function App() {
     },
   ];
 
-const receiveExpenseData = (expenseData) => {
-  console.log(expenseData)
-}
+  const receiveExpenseData = (expenseData) => {
+    console.log(expenseData);
+  };
 
   return (
     <div>
       <h2>Let's get started!</h2>
       <h2>Welcome to React</h2>
       <NewExpense onReceiveExpenseData={receiveExpenseData} />
+      <ExpensesFilter />
       <Expenses items={expenses} />
     </div>
   );
